@@ -41,7 +41,7 @@ const NewsBoard = () => {
           mm='0'+(mm-1);
       } 
       today = yyyy +'-'+ mm+'-'+dd;
-    const url=`https://newsapi.org/v2/everything?q=${content}&from=${today}&sortBy=publishedAt&apiKey=67f3265bc4304c27a62fc9d81b5966ca`;
+      const url=`https://newsapi.org/v2/everything?q=${content}&from=${today}&sortBy=publishedAt&apiKey=${import.meta.env.VITE_APIKEY}`;
       const response = await fetch(url);
       const data = await response.json();
       setDataJson(data.articles);
@@ -62,7 +62,7 @@ const NewsBoard = () => {
           mm='0'+mm;
       } 
       today = yyyy +'-'+ mm+'-'+dd;
-      const url=`https://newsapi.org/v2/top-headlines?country=${country}&from=${today}&sortBy=publishedAt&apiKey=67f3265bc4304c27a62fc9d81b5966ca`;
+      const url=`https://newsapi.org/v2/top-headlines?country=${country}&from=${today}&sortBy=publishedAt&apiKey=${import.meta.env.VITE_APIKEY}`;
       const response = await fetch(url);
       const data = await response.json();
       setDataJson(data.articles);
